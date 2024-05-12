@@ -1,0 +1,83 @@
+@import "./vars.scss";
+.custom-input-error-container {
+    position: relative;
+    margin-bottom: 0.8rem;
+}
+.custom-input-container {
+    border-bottom: 1px solid;
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    padding-top: 25px;
+    position: relative;
+    cursor: text;
+    .icon-container {
+        justify-self: end;
+    }
+    label {
+        width: 100%;
+        span {
+            position: absolute;
+            left: 0;
+            top: 20px;
+            font-size: 1.5rem;
+            transition: all $transition-time;
+        }
+
+        .span-focus {
+            top: 0px;
+            font-size: 0.8rem;
+        }
+
+        .custom-input {
+            background-color: transparent;
+            color: inherit;
+            border: none;
+            width: 100%;
+            padding-bottom: 15px;
+            font-size: inherit;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                appearance: none;
+            }
+        }
+    }
+}
+.input-calendar-container {
+    position: absolute;
+    width: fit-content;
+    left: 50%;
+    transform: scale(0.6) translate(-80%, calc(-40% + 50px));
+    background-color: $base-color;
+    border-radius: 5px;
+    background-color: $base-color;
+    z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.custom-input-container-error {
+    color: $red !important;
+}
+.custom-input-error-msg {
+    position: absolute;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: $red;
+}
+@media (max-height: 830px) {
+    .input-calendar-container {
+        position: absolute;
+        width: fit-content;
+        top: 0;
+    }
+}
+@media (max-height: 700px) {
+    .input-calendar-container {
+        position: absolute;
+        width: fit-content;
+        top: 0;
+        min-width: 350px;
+        transform: scale(0.6) translate(-80%, calc(-100% + 50px));
+    }
+}
